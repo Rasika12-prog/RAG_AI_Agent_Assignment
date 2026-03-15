@@ -360,18 +360,18 @@
 
 ## Assignment 22: Khalid Khan
 
-**Topic: Islamic Studies / Religious Text Bot**
+**Topic: Gaming Knowledge & Esports Bot**
 
 **Tasks:**
-1. Find 2-3 Islamic studies PDFs (Islamic history, Hadith compilations, scholarly articles) and place them in `data/`
-2. In `rag_agent.py`, modify the `SYSTEM_PROMPT` to act as a **scholarly assistant** that:
-   - Always provides references to specific sources/scholars
-   - Presents multiple scholarly opinions when they exist
-   - Uses respectful, academic language
-   - Adds "Further Reading:" suggestions based on the topic
-3. In `ingestion.py`, change `CHUNK_SIZE` to `1000` and `CHUNK_OVERLAP` to `250`
-4. In `rag_agent.py`, change `TOP_K` to `5` and use **METHOD 2** (relevance scores) with threshold `0.3`
-5. Test with 3 questions about Islamic history/studies and document the results
+1. Find 2-3 gaming PDFs (game design documents, esports tournament reports, gaming industry analysis, game manuals) and place them in `data/`
+2. In `rag_agent.py`, modify the `SYSTEM_PROMPT` to act as a **gaming expert** that:
+   - Uses gaming terminology naturally (meta, nerf, buff, DPS, etc.)
+   - Structures answers as: Overview, Strategy/Tips, Pro Insight
+   - Adds "Fun Fact:" at the end of each answer
+   - Rates relevance of tips: "Beginner", "Intermediate", "Advanced"
+3. In `ingestion.py`, change `CHUNK_SIZE` to `600` and `CHUNK_OVERLAP` to `120` — game guides have short, dense sections
+4. In `rag_agent.py`, change `TOP_K` to `5`, `TEMPERATURE` to `0.4`, and switch to **METHOD 3** (MMR) to get diverse gameplay perspectives
+5. Test with 3 gaming questions and document the results
 
 ---
 
