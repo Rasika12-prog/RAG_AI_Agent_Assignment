@@ -35,7 +35,7 @@ from ingestion import CHROMA_DB_DIR, EMBEDDING_MODEL
 # How many chunks to retrieve per query
 # - More chunks (5-8) = broader context, may include less relevant info
 # - Fewer chunks (2-3) = more focused, but may miss relevant info
-TOP_K = 4
+TOP_K = 5
 
 # --------------------------------------------------------------------------
 # LLM SETTINGS - Students: experiment with these!
@@ -66,14 +66,17 @@ TEMPERATURE = 0
 #   - "Answer in bullet points only."
 #   - "If you're not sure, list what you DO know and what's missing."
 #
-SYSTEM_PROMPT = """You are a helpful assistant. Answer the user's question based ONLY \
-on the following context from retrieved documents.
+SYSTEM_PROMPT = """You are a  financial analyst.
+Answer the user's question based ONLY on the following context from retrieved docuement.
 
 RULES:
 1. Only use information from the provided context below.
 2. If the context does not contain enough information, say so honestly.
 3. At the end of your answer, add a "Sources:" section listing which \
 documents and pages you used.
+4.When multiple data points, options, or values are present, provide a clear comparison (use tables or bullet points where appropriate)
+5.Always highlight important numbers, percentages, and quantitative values in responses (use bold formatting).
+6.List potential risks, assumptions,improvements, or downsides in concise bullet points.
 
 Context:
 {context}
@@ -122,19 +125,19 @@ def retrieve(state: RAGState) -> dict:
 
     # METHOD 1: Basic similarity search (DEFAULT)
     # Returns the TOP_K chunks most similar to the question
-    results = vector_store.similarity_search(question, k=TOP_K)
+   # results = vector_store.similarity_search(question, k=TOP_K)
 
     # METHOD 2: Similarity search with relevance scores
     # Returns chunks along with their similarity scores (0 to 1)
     # Uncomment below and comment out Method 1 to try it:
     #
-    # results_with_scores = vector_store.similarity_search_with_relevance_scores(
-    #     question, k=TOP_K
-    # )
-    # # Filter out low-relevance chunks (score < 0.3)
-    # results = [doc for doc, score in results_with_scores if score > 0.3]
-    # for doc, score in results_with_scores:
-    #     print(f"    Score: {score:.3f} | {doc.metadata.get('source', '?')}")
+    results_with_scores = vector_store.similarity_search_with_relevance_scores(
+        question, k=TOP_K
+    )
+    # Filter out low-relevance chunks (score < 0.3)
+    results = [doc for doc, score in results_with_scores if score > 0.3]
+    for doc, score in results_with_scores:
+        print(f"    Score: {score:.3f} | {doc.metadata.get('source', '?')}")
 
     # METHOD 3: MMR (Maximum Marginal Relevance)
     # Balances relevance with diversity - avoids returning similar chunks

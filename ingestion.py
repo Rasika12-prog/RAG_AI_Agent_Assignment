@@ -45,7 +45,7 @@ CHUNK_SIZE = 1000
 # CHUNK_OVERLAP: How many characters overlap between consecutive chunks.
 #   - More overlap (200-500) = better continuity, chunks share more context
 #   - Less overlap (0-100)   = less redundancy, but may miss split sentences
-CHUNK_OVERLAP = 200
+CHUNK_OVERLAP = 350
 
 # --------------------------------------------------------------------------
 # EMBEDDING MODEL - Students: try swapping this!
@@ -56,7 +56,9 @@ CHUNK_OVERLAP = 200
 #   "all-MiniLM-L12-v2"          - Slightly better quality, still fast
 #   "all-mpnet-base-v2"          - Best quality from sentence-transformers (~420MB)
 #   "paraphrase-MiniLM-L6-v2"    - Good for paraphrase detection
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+#EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+EMBEDDING_MODEL = "all-MiniLM-L12-v2"
+
 
 
 # ==========================================================================
@@ -120,22 +122,22 @@ def split_documents(documents: list) -> list:
     # STRATEGY 1: RecursiveCharacterTextSplitter (DEFAULT)
     # Splits by paragraphs -> sentences -> words, keeping structure intact.
     # This is the most commonly used splitter and a great starting point.
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=CHUNK_SIZE,
-        chunk_overlap=CHUNK_OVERLAP,
-        length_function=len,
-        separators=["\n\n", "\n", ". ", " ", ""],  # Split priority order
-    )
+    #text_splitter = RecursiveCharacterTextSplitter(
+       # chunk_size=CHUNK_SIZE,
+       # chunk_overlap=CHUNK_OVERLAP,
+       # length_function=len,
+       # separators=["\n\n", "\n", ". ", " ", ""],  # Split priority order
+  #  )
 
     # STRATEGY 2: CharacterTextSplitter (simpler, less smart)
     # Uncomment below and comment out Strategy 1 to try it:
     #
-    # from langchain_text_splitters import CharacterTextSplitter
-    # text_splitter = CharacterTextSplitter(
-    #     chunk_size=CHUNK_SIZE,
-    #     chunk_overlap=CHUNK_OVERLAP,
-    #     separator="\n",  # Splits only on newlines
-    # )
+    from langchain_text_splitters import CharacterTextSplitter
+    text_splitter = CharacterTextSplitter(
+        chunk_size=CHUNK_SIZE,
+        chunk_overlap=CHUNK_OVERLAP,
+        separator="\n",  # Splits only on newlines
+    )
 
     # STRATEGY 3: TokenTextSplitter (splits by tokens instead of characters)
     # Better for LLMs since they process tokens, not characters.
