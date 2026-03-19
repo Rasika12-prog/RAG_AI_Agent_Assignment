@@ -452,3 +452,168 @@ For a comprehensive business highlight including net profit and key trends, addi
 
 Sources:
 - Infosys Integrated Annual Report 2024-25, Pages 372-373 (Segment reporting and financial data)
+
+
+Result after Modifyinh the system prompt
+
+You: what can infer from infosys annual report
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 7521.14it/s]
+BertModel LOAD REPORT from: sentence-transformers/all-MiniLM-L12-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/Users/rasikarasal/RAG_AI_Agent_Assignment/RAG_AI_Agent_Assignment/rag_agent.py:117: LangChainDeprecationWarning: The class `Chroma` was deprecated in LangChain 0.2.9 and will be removed in 1.0. An updated version of the class exists in the `langchain-chroma package and should be used instead. To use it run `pip install -U `langchain-chroma` and import as `from `langchain_chroma import Chroma``.
+  vector_store = Chroma(
+    Score: 0.702 | data/infosys-ar-25.pdf
+    Score: 0.702 | data/infosys-ar-25.pdf
+    Score: 0.702 | data/infosys-ar-25.pdf
+    Score: 0.702 | data/infosys-ar-25.pdf
+    Score: 0.702 | data/infosys-ar-25.pdf
+  [Retrieve] Found 5 relevant chunks for: 'what can infer from infosys annual report'
+    [1] data/infosys-ar-25.pdf (Page 9)
+    [2] data/infosys-ar-25.pdf (Page 9)
+    [3] data/infosys-ar-25.pdf (Page 9)
+    [4] data/infosys-ar-25.pdf (Page 9)
+    [5] data/infosys-ar-25.pdf (Page 9)
+  [Generate] Answer produced.
+
+Assistant: Based on the provided context from the Infosys Integrated Annual Report 2024-25, the following inferences can be made:
+
+1. **Comprehensive Reporting**: Infosys provides a detailed overview of its performance and progress over the past year, covering both financial and non-financial aspects.
+
+2. **Sustainability and Social Responsibility**: The company emphasizes environmental sustainability and social responsibility, indicating a commitment beyond just financial performance.
+
+3. **Adherence to Global Standards**: Infosys has adopted the Global Reporting Initiative (GRI) principles for 17 years and was the first IT company to publish sustainability performance according to the GRI G4 (comprehensive) criteria in 2014. This shows a long-standing commitment to transparent and standardized reporting.
+
+4. **Integrated Reporting Approach**: The report integrates quantitative and qualitative disclosures on material topics, including financial performance, environmental sustainability, social responsibility, and stakeholder relationships.
+
+5. **Leadership and Culture**: Infosys highlights its strategy, leadership commitment, and a culture that values people, performance, and purpose.
+
+6. **International Standards Compliance**: The report is prepared in accordance with the International Integrated Reporting Framework, suggesting alignment with global best practices in corporate reporting.
+
+### Potential Risks or Considerations:
+- The context does not provide specific financial figures or performance metrics, so detailed financial analysis is not possible.
+- The emphasis on sustainability and social responsibility, while positive, may also imply ongoing investments and costs in these areas.
+
+### Summary Table:
+
+| Aspect                        | Inference                                      |
+|------------------------------|------------------------------------------------|
+| Reporting Scope              | Comprehensive, covering financial and non-financial aspects |
+| Sustainability Commitment   | Long-term adherence to GRI standards, first in IT sector for GRI G4 |
+| Reporting Framework         | International Integrated Reporting Framework   |
+| Focus Areas                 | Financial performance, environmental sustainability, social responsibility, stakeholder relations |
+| Corporate Culture           | Emphasis on people, performance, and purpose   |
+
+Sources:
+- Infosys Integrated Annual Report 2024-25, Page 16-17
+
+------------------------------------------------------------
+
+You: Any risk that you can highlight from RIL report
+
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 12983.64it/s]
+BertModel LOAD REPORT from: sentence-transformers/all-MiniLM-L12-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+    Score: 0.481 | data/RIL-Integrated-Annual-Report-2024-25.pdf
+    Score: 0.481 | data/RIL-Integrated-Annual-Report-2024-25.pdf
+    Score: 0.481 | data/RIL-Integrated-Annual-Report-2024-25.pdf
+    Score: 0.481 | data/RIL-Integrated-Annual-Report-2024-25.pdf
+    Score: 0.481 | data/RIL-Integrated-Annual-Report-2024-25.pdf
+  [Retrieve] Found 5 relevant chunks for: 'Any risk that you can highlight from RIL report'
+    [1] data/RIL-Integrated-Annual-Report-2024-25.pdf (Page 15)
+    [2] data/RIL-Integrated-Annual-Report-2024-25.pdf (Page 15)
+    [3] data/RIL-Integrated-Annual-Report-2024-25.pdf (Page 15)
+    [4] data/RIL-Integrated-Annual-Report-2024-25.pdf (Page 15)
+    [5] data/RIL-Integrated-Annual-Report-2024-25.pdf (Page 15)
+  [Generate] Answer produced.
+
+Assistant: Based on the RIL report, the key risks highlighted are:
+
+| Risk Type                     | Description                                                                                  | Risk Response                                                                                      |
+|-------------------------------|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| **Liquidity Risk**             | Tight liquidity conditions can impact the rollover of maturing liabilities.                 | Timely refinancing and avoiding bunching up of repayments help mitigate liquidity risk.          |
+| **Interest Rate Risk**         | High interest rates for USD and INR borrowings increase RIL’s finance costs.                 | Maintaining an appropriate mix of fixed and floating rate liabilities minimizes impact on costs. |
+| **Credit Risk in Investment Portfolio** | Corporate Bonds and Debt Mutual Funds in RIL’s portfolio carry issuer-related credit risks. | Investments in highly rated instruments directly and indirectly through mutual funds minimize credit risk. |
+| **Foreign Exchange Risk**      | Exposure due to foreign currency borrowings.                                                | Hedged through a combination of natural and market hedges.                                       |
+
+### Potential Risks and Considerations:
+- Liquidity risk could affect the ability to refinance maturing liabilities if market conditions tighten.
+- Interest rate fluctuations, especially high rates in USD and INR, could increase finance costs.
+- Credit risk exists due to issuer-related risks in corporate bonds and debt mutual funds.
+- Foreign exchange risk is managed but remains a factor due to foreign currency borrowings.
+
+### Summary:
+RIL faces **liquidity risk**, **interest rate risk**, **credit risk in its investment portfolio**, and **foreign exchange risk**. The company employs strategies such as timely refinancing, hedging, and investing in highly rated instruments to mitigate these risks.
+
+Sources:
+- [1] RIL-Integrated-Annual-Report-2024-25.pdf (Page 15)
+
+------------------------------------------------------------
+
+You: can highlight areas where growth has seen in august from Monthly economic review report
+
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 13548.46it/s]
+BertModel LOAD REPORT from: sentence-transformers/all-MiniLM-L12-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED    :can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+    Score: 0.370 | data/Monthly Economic Review August 2025.pdf
+    Score: 0.370 | data/Monthly Economic Review August 2025.pdf
+    Score: 0.370 | data/Monthly Economic Review August 2025.pdf
+    Score: 0.370 | data/Monthly Economic Review August 2025.pdf
+    Score: 0.370 | data/Monthly Economic Review August 2025.pdf
+  [Retrieve] Found 5 relevant chunks for: 'can highlight areas where growth has seen in august from Monthly economic review report'
+    [1] data/Monthly Economic Review August 2025.pdf (Page 6)
+    [2] data/Monthly Economic Review August 2025.pdf (Page 6)
+    [3] data/Monthly Economic Review August 2025.pdf (Page 6)
+    [4] data/Monthly Economic Review August 2025.pdf (Page 6)
+    [5] data/Monthly Economic Review August 2025.pdf (Page 6)
+  [Generate] Answer produced.
+
+Assistant: Based on the Monthly Economic Review report for August 2025, the following areas have shown notable growth:
+
+1. Government Final Consumption Expenditure (GFCE):
+   - GFCE grew by **7.4% in real terms** in Q1 FY26, rebounding after contractions in Q1 FY25 and Q4 FY25.
+   - This growth aligns with a **20% year-on-year increase** in the Centre’s revenue expenditure during the quarter.
+
+2. Gross Fixed Capital Formation (GFCF):
+   - Growth in GFCF was supported by the government’s capital expenditure (capex) impetus combined with a favorable base effect.
+
+3. Economic Activity Indicators:
+   - Volume of GST E-way bills generated increased by **24.1% year-on-year** in July-August 2025.
+   - PMI Manufacturing reached a **17-year high** in August 2025.
+   - PMI Services reached a **15-year high** in August 2025.
+
+These indicators reflect strong underlying trends and momentum in the economy during August 2025.
+
+Potential risks or mixed signals:
+- The demand perspective shows a mixed picture, with retail sales of two-wheelers and three-wheelers not fully detailed in the provided context.
+
+Summary Table:
+
+| Area                          | Growth/Change                         | Timeframe          |
+|-------------------------------|-------------------------------------|--------------------|
+| Government Final Consumption Expenditure (GFCE) | +7.4% (real terms)                  | Q1 FY26            |
+| Centre’s Revenue Expenditure   | +20% (YoY)                          | Q1 FY26            |
+| GST E-way Bills Volume         | +24.1% (YoY)                       | July-August 2025   |
+| PMI Manufacturing             | 17-year high                       | August 2025        |
+| PMI Services                  | 15-year high                       | August 2025        |
+
+Sources:
+- Monthly Economic Review August 2025, Page 6
+
+------------------------------------------------------------
